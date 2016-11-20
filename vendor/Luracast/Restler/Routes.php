@@ -697,6 +697,7 @@ class Routes
                     ) {
                         list($child['contentType'], $child['children'])
                             = static::getTypeAndModel(new ReflectionClass($qualified), $scope);
+                        $child[CommentParser::$embeddedDataName]['type'] = $child['contentType'];
                     }
                     $children[$name] = $child;
                 }
